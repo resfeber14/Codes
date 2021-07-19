@@ -1,10 +1,10 @@
-Time Complexity: O(n)
+
 //Articulation Point: A vertex V in a connected graph is an articulation point if and only if the deletion of vertex V together with all edges incident to V disconnects
 //the graph into 2 or more non-empty components.
 
 //Bridges: An edge in a connected graph if and only if removing it,disconnects the graph. 
 
-
+//Time Complexity: O(n)
 
 vector<pair<int,int> > bridge;
 set<int> articulation;
