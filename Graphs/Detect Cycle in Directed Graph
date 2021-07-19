@@ -1,3 +1,4 @@
+//Method 1: With two visited arrays
 bool cycle(int src,bool vis1[],bool vis2[],vector<int> adj[]){
 	vis1[src]=1;
 	vis2[src]=1;
@@ -32,4 +33,52 @@ bool isCyclic(int V, vector<int> adj[])
 	   	}
 	}
 	return false;
+}
+
+//Method 2: With 1 visited arrays
+
+
+bool dfs(vector<int> adj[],int visited[],int curr,int par){
+	//visited and in call stack
+	visited[curr]=1;
+	for(auto child:adj[curr]){
+		if(visited[child]==0){
+			if(dfs(adj,visited,child,curr))
+				return true;	
+		}
+		else if(child!=par && visited[child]==1){
+			return true;
+		}
+	}
+	//visited and not in call stack
+	visited[curr]=2;
+	return false;
+}
+
+int main() {
+	int n,m;
+	cin>>n>>m;
+	vector<int> adj[n+1];
+	for(int i=0;i<m;i++){
+		int u,v;
+		cin>>u>>v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
+    }
+	int visited[n+1],parent[n+1];
+	memset(visited,0,sizeof(visited));
+	bool flag=false;
+	for(int i=1;i<=n;i++){
+		if(visited[i]==0){
+			if(dfs(adj,visited,parent,i,0)){
+				flag=true;
+				cout<<"There is a cycle\n";
+				break;
+			}	
+		}
+	}
+	if(!flag){
+		cout<<"There isn't any cycle\n"
+	}
+	return 0;
 }
