@@ -1,0 +1,27 @@
+//Definition of Bipartite Graph: Any graph that has an odd length cycle will not be Bipartite Graph.
+//Any graph which does not have odd length cycle will be Bipartite Graph.
+
+bool bfs(int color[],int V,vector<int>adj[]){
+    queue<int > q;
+    for(int i=0;i<V;i++){
+    	if(color[i]==-1){
+       		q.push(i);
+    		color[i]=0;
+        	while(!q.empty()){
+        		int p= q.front();
+            	q.pop();
+            	for(auto child: adj[p]){
+            		if(color[child]==-1){
+                    	color[child]= 1-color[p];
+                    	q.push(child);
+                 }
+            		else{
+                		if(color[child]== color[p])
+                        	return false;
+                   }
+               }
+          }
+      }
+   }
+}
+
