@@ -1,3 +1,5 @@
+//An example of Post order traversal
+
 int height(node* root){
 	if(!root)
 		return 0;
