@@ -1,0 +1,35 @@
+bool cycle(int src,bool vis1[],bool vis2[],vector<int> adj[]){
+	vis1[src]=1;
+	vis2[src]=1;
+	for(auto child:adj[src]){
+	    if(!vis1[child]){
+	        if(cycle(child,vis1,vis2,adj)){
+	            return true;
+	        }
+	    }
+	    else{
+	        if(vis2[child]){
+	            return true;
+	        }
+	    }
+	}
+	vis2[src]=0;
+	return false;
+}
+	
+bool isCyclic(int V, vector<int> adj[]) 
+{
+	bool vis1[V],vis2[V];
+	for(int i=0;i<V;i++){
+	   	vis1[i]=0;
+	   	vis2[i]=0;
+	}
+	for(int i=0;i<V;i++){
+	   	if(!vis1[i]){
+	   	    if(cycle(i,vis1,vis2,adj)){
+	   	        return true;
+	   	    }
+	   	}
+	}
+	return false;
+}
