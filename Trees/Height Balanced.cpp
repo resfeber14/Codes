@@ -4,6 +4,7 @@
 // 2) Right subtree of T is balanced
 // 3) The difference between heights of left subtree and right subtree is not more than 1.
 
+//Time Complexity: O(N)
 
 #include <bits/stdc++.h> 
 #include<map>
