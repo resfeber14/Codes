@@ -1,3 +1,6 @@
+// TimeComplexity: O(N*N)
+
+
 #include <bits/stdc++.h> 
 #include<map>
 using namespace std;
