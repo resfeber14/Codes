@@ -1,0 +1,17 @@
+Trees-> It is a connected graph which has no cycles.
+-> Every pair of vertices have exactly one path between them.
+Here, every pair of vertices has a path-> indicates It is connected.
+Here, every pair of vertices have excatly one path between them-> indicates it doesn't contain any cycle.
+If we have connected structure with (n-1) edges,then It is a tree.
+
+Forest-> A collection of trees.Forest is a graph in which all its components are trees individually.
+
+
+Questions:
+Print the path from x to y
+solution:
+Make y as root node and print ancestors of it till x
+
+Euler Path: A path that goes through every edge of a graph exactly once.
+Euler Circuit: An Euler Path that begins and end at the same vertex.
+Euler Path: 
