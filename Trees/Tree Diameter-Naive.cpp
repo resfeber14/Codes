@@ -59,7 +59,7 @@ int diameter(node* root){
 
 
 int main() {
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     node* root=buildTree();
     cout<<diameter(root)<<"\n";
