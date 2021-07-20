@@ -2,6 +2,7 @@
 // So,now instead of returning one value,which was diameter earlier,we will return two values,i.e. diameter and height of a each node.
 // This way we don't need to recalculate the height of a particular node each time.
 
+//Time Complexity: O(N)
 
 class node{
 public:
