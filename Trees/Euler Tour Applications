@@ -1,0 +1,34 @@
+//Problems on Euler Tour: 
+1.
+Ques: Print the subtree of a node x
+
+Sol:
+The nodes present between intime of a particular node x and outtime of x will give nodes in the subtree of x.
+2.
+Ques:Check if a node u is an ancestor of v or not?
+
+Sol: 
+It means v should lie in the subtree of u.And if v lies in the subtree of u.then,
+ 	Timein[u]<Timein[v] && Timeout[u]>Timeout[v]
+
+3. //Since we have flattenned the tree into an array,Now if we want to do something to a subtree of a particular
+//node, we can easily do in the range of the array.
+
+Ques: Given a tree, Queries will be:Print sum of all nodes in a subtree of x
+
+Sol: Preprocess the tree using euler tour and then we will know the tin and tout time of any node of the tree.
+ We can precompute the sum using prefix Sum or Segment tree
+
+4.
+Ques: Given a tree, Queries will be:
+Type 1:Print sum of all nodes in a subtree of x
+Type 2: Increase all the nodes in the subtree of node x
+
+Sol: Preprocess the tree using euler tour and then we will know the tin and tout time of any node of the tree.
+then,Use segment Trees with Lazy Propagation.
+
+5. 
+Ques:In the subtree of node x,Output the minimum/maximum node.
+
+Sol: Preprocess the tree using euler tour and then we will know the tin and tout time of any node of the tree.
+then,Use segment Trees.
