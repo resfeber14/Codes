@@ -5,6 +5,7 @@
 //Step 1: Sort all the nodes in the order of its finishing time,i.e. Perform topological sort : O(N+E)
 //Step 2: Transpose the Graph: O(N+E)
 //Step 3: Perform DFS on the transposed graph O(N+E)
+
 //Time Complexity: O(N+E)
 //Space Complexity: O(N+E) + O(N) +O(N) (transpose+visited +stack)
 
