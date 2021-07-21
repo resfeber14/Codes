@@ -1,0 +1,19 @@
+a Vertex V that lies on the path from the root to v1 and the path from the root to v2,and the vertex should be the lowest.
+
+LCA is the most bottoma ancestor of v1 and v2.
+LCA lies on the shortest path from v1 to v2.
+For all path related problems we use LCA.
+
+The path from the first vertex to the second vertex will always go through its LCA.
+
+Questions:
+1. Given q queries,print the sum of nodes in the path from v1 to v2.(q<=1e5)
+Solution:
+depth: length of path from the root node
+To find path from v1 to v2
+sum(v1,v2)= sum till v1+sum till v2-2*sum till LCA+LCA
+
+Methods to find LCA:
+1. LCA using two pointers
+2. LCA using Euler tour
+3. LCA using Binary Lifting
