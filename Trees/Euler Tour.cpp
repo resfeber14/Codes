@@ -5,12 +5,6 @@
 using namespace std;
 // Here ,Basically we have flattened the tree into an array
 
-
-
-//go to node,print it.exit the node,print it.
-//there will be 2*n nodes which will be printed.Here,we are starting from the root.So root, will also be printed twice.
-
-
 // Why 3rd Euler tour.
 // It is the best and we will use it.As it doesn't contain any repeated nodes:)
 
