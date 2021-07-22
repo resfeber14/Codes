@@ -13,6 +13,8 @@
 // 8th parent-> then find 2^2 parent of i and then find 2^2 parent of the 2^2 th parent of ith node.
 
 
+// Time Complexity: O(N*M) Dfs  (Where M=Log(n)) + O(M)  LCA for 1 query  
+
 #include <bits/stdc++.h> 
 #include<map>
 using namespace std;
@@ -73,7 +75,7 @@ int LCA(int u,int v){
 }
 
 int main() {
-	  ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int n;
     cin>>n;
