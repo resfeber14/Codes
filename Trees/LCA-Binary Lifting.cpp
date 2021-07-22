@@ -71,6 +71,9 @@ int LCA(int u,int v){
 		}
 	}
 	// We have reached just below the LCA.So now,First parent of u or v will be the LCA.
+	if(u==v){
+		return u;
+	}
 	return Par[u][0];
 }
 
