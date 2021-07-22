@@ -74,6 +74,11 @@ int LCA(int u,int v){
 	return Par[u][0];
 }
 
+int LengthOfPath(int u,int v){
+	int lca=LCA(u,v);
+	return dep[u]+dep[v]-2*dep[lca];
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -99,5 +104,7 @@ int main() {
     	}
     	cout<<"\n";
     }
+    cout<<LengthOfPath(9,12)<<"\n";
+    cout<<LengthOfPath(10,8)<<"\n";
     return 0;
 }
