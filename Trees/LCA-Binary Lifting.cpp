@@ -53,7 +53,7 @@ int LCA(int u,int v){
 	}
 	// Let's assume depth of u will be more than v;
 	if(dep[u]<dep[v])
-		swap(dep[u],dep[v]);
+		swap(u,v);
 		
 	int diff=dep[u]-dep[v];
 	
