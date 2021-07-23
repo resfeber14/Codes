@@ -1,3 +1,5 @@
+// Probelm Link:   https://leetcode.com/problems/binary-tree-pruning/
+
 bool solve(TreeNode* root){
         if(!root)
             return true;
