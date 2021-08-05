@@ -51,3 +51,31 @@ int search(vector<int>& arr, int k) {
         }
         return -1;
     }
+
+// Method 2:
+
+
+int search(vector<int>& nums, int key) {
+        int s=0,e=nums.size()-1;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(key==nums[mid])
+                return mid;
+            if(nums[mid]>=nums[s]){
+                if(key>=nums[s] && key<nums[mid]){
+                    e=mid-1;
+                }
+                else{
+                    s=mid+1;
+                }
+            }
+            else if(nums[mid]<= nums[e]){
+                if(key>nums[mid] && key<=nums[e]){
+                    s=mid+1;
+                }
+                else{
+                    e=mid-1;
+                }
+            }
+        }
+        return -1;
