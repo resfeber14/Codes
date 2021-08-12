@@ -1,6 +1,6 @@
 // Problem Link: https://leetcode.com/problems/jump-game/
 
-// Check for all 0s
+// Method 1: Check for all 0s O(n*n)
 bool canJump(vector<int>& arr) {
         int n=arr.size();
         if(n==1)
@@ -25,6 +25,26 @@ bool canJump(vector<int>& arr) {
         }
         return flag;
     }
+
+// Method 2: O(n)
+bool canJump(vector<int>& arr) {
+        int n=arr.size();
+        int curr_max=0,curr_end=0,jumps=0;
+        for(int i=0;i<n;i++){
+            curr_max=max(curr_max,i+arr[i]);
+            if(i==curr_end && i!=n-1){
+                jumps++;
+                curr_end=curr_max;
+            }
+            if(curr_end>=n-1)
+                break;
+        }
+        if(curr_end<n-1)
+            return false;
+        return true;
+        
+    }
+
 
 // Problem Link:   https://leetcode.com/problems/jump-game-ii/
 
