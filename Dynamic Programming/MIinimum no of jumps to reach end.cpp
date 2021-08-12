@@ -90,3 +90,28 @@ int minJumps(int arr[], int n){
             return -1;
         return jumps;
     }
+
+// Problem Link:  https://leetcode.com/problems/jump-game-iii/
+
+bool solve(int i,vector<int> &dp,vector<int> &arr,int n){
+        if(arr[i]==0)
+            return true;
+        if(dp[i]!=-1)
+            return arr[i]==0;
+        dp[i]=1;
+        bool x=false,y=false;
+        if(i-arr[i]>=0){
+            x=solve(i-arr[i],dp,arr,n);
+        }
+        if(i+arr[i]<n && arr[i]!=0){
+            y=solve(i+arr[i],dp,arr,n);
+        }
+        return x || y;
+    }
+    bool canReach(vector<int>& arr, int start) {
+        int n=arr.size();
+        vector<int> dp(n,-1);
+        return solve(start,dp,arr,n);
+    }
+
+
