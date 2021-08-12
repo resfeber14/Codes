@@ -1,6 +1,7 @@
 // Problem Link:  https://practice.geeksforgeeks.org/problems/ncr1019/1#
 
 // nCr= (n-1)C(r-1) + (n-1)Cr
+// If nPr we have to find nPr= (n-1)P(r-1) * r + (n-1)P(r) 
     int solve(int n,int r,vector<vector<int> > &dp){
         if(n==r){
             return 1;
