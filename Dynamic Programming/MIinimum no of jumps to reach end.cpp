@@ -1,3 +1,31 @@
+// Problem Link: https://leetcode.com/problems/jump-game/
+
+// Check for all 0s
+bool canJump(vector<int>& arr) {
+        int n=arr.size();
+        if(n==1)
+            return true;
+        bool flag=true;
+        for(int i=n-2;i>=0;i--){
+            if(arr[i]==0){
+                flag=false;
+                int cnt=2;
+                for(int j=i-1;j>=0;j--){
+                    if(arr[j]>=cnt){
+                        flag=true;
+                        i=j;
+                        break;
+                    }
+                    else
+                        cnt++;
+                }
+                if(!flag)
+                    return flag;
+            }
+        }
+        return flag;
+    }
+
 // Problem Link:   https://leetcode.com/problems/jump-game-ii/
 
 // Method 1:O(n*n)
