@@ -1,5 +1,8 @@
+// Problem Link:  https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1
+
 // Modification of Kadane
 // Convert all 0s to 1 and all 1s to -1.Then find maximum subarray sum
+
 
 int maxSubstring(string s)
 	{
