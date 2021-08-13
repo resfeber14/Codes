@@ -32,3 +32,21 @@ int solve2(int i,vector<int> &dp,vector<int> &arr){
         
         return max(op1,op2);
     }
+
+// Method 2: O(1) space
+
+int solve(int l,int r,vector<int> &arr){
+        int pre=0,curr=0;
+        for(int i=l;i<=r;i++){
+            int temp=max(curr,arr[i]+pre);
+            pre=curr;
+            curr=temp;
+        }
+        return curr;
+    }
+    int rob(vector<int>& arr) {
+        int n=arr.size();
+        if(n==1)
+            return arr[0];
+        return max(solve(0,n-2,arr),solve(1,n-1,arr));
+    }
