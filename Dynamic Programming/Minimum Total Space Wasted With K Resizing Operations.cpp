@@ -1,5 +1,7 @@
 // Problem Link:  https://leetcode.com/problems/minimum-total-space-wasted-with-k-resizing-operations/
 
+// Method: dp(i,k)= minimum total space wasted with k-resizing operations
+// It's like partition.take left part and right part
 
 
 int solve(int i,int k,vector<int> &arr,vector<vector<int> > &dp){
@@ -17,7 +19,7 @@ int solve(int i,int k,vector<int> &arr,vector<vector<int> > &dp){
             sum+=arr[j];
             int curr= (j-i+1)*maxx - sum;
             if(op2!=INT_MAX)
-                op2=curr+op2;
+                op2=curr+op2;   // curr is the answer for left if we partition at some j and solve(j+1,k-1) is of right side
             ans=min(ans,op2);
         }
         return dp[i][k]=ans;
