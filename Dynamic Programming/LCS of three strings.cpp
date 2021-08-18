@@ -36,25 +36,6 @@ int LCSof3 (string s1, string s2, string s3, int n1, int n2, int n3)
 // Method 2: Bottom up
 
 
-int solve(int i,int j,int k,string s1,string s2,string s3,vector<vector<vector<int> > > &dp){
-    if(i==s1.length() || j==s2.length() || k==s3.length()){
-        return 0;
-    }
-    if(dp[i][j][k]!=-1){
-        return dp[i][j][k];
-    }
-    if(s1[i]==s2[j] && s2[j]==s3[k]){
-        dp[i][j][k]=1+solve(i+1,j+1,k+1,s1,s2,s3,dp);
-    }
-    else{
-        int op1=solve(i+1,j,k,s1,s2,s3,dp);
-        int op2=solve(i,j+1,k,s1,s2,s3,dp);
-        int op3=solve(i,j,k+1,s1,s2,s3,dp);
-        dp[i][j][k]=max(max(op1,op2),op3);
-    }
-    return dp[i][j][k];
-}
-
 
 int LCSof3 (string s1, string s2, string s3, int n1, int n2, int n3)
 {
