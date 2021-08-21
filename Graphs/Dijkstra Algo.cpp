@@ -25,7 +25,7 @@ void dijkstra(vector<ppl> adj[],ll src,ll dist[],ll n){
 		ll w=curr.f;
 		ll node=curr.s;
 		if(!visited[node]){
-			visited[node]=1;
+			visited[node]=1;  // In this algo,we may or maynot store the store the visited array as before pushhing into pq,it otself us checking if(w+weight<dist[current]).Hence no infinite loop will ever happpen if we do not use visited array
 			for(auto child:adj[node]){
 				ll current=child.f,weight=child.s;
 				if(!visited[current]){
