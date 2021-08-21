@@ -29,8 +29,8 @@ void dijkstra(vector<ppl> adj[],ll src,ll dist[],ll n){
 			for(auto child:adj[node]){
 				ll current=child.f,weight=child.s;
 				if(!visited[current]){
-					if(dist[node]+weight<dist[current]){
-						dist[current]=dist[node]+weight;
+					if(w+weight<dist[current]){
+						dist[current]=w+weight;
 						pq.push({dist[current],current});
 			        }
 			    }
