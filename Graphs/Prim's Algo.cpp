@@ -1,4 +1,5 @@
 //Time Complexity: O((N+E)+ N*logN)
+// Intuition: We started with a single node,we picked up the edges with the minimal weight and expanded the tree.We kept doing this until we didn't get n nodes and n-1 edges.
 // In this algo,we take the nodes one by one and insert all its adjacent nodes in the priority queue and every time we take that edge from the priority queue which hasn't been
 // discovered yet and has minimum weight among all the nodes in the pq
 void solve(vector<int> &key,vector<int> &mst,vector<int> &parent,vector<vector<int>> adj[],int V){
