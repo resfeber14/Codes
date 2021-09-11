@@ -46,7 +46,7 @@ bool dfs(vector<int> adj[],int visited[],int curr,int par){
 			if(dfs(adj,visited,child,curr))
 				return true;	
 		}
-		else if(child!=par && visited[child]==1){
+		else if(visited[child]==1){
 			return true;
 		}
 	}
@@ -63,7 +63,6 @@ int main() {
 		int u,v;
 		cin>>u>>v;
 		adj[u].push_back(v);
-		adj[v].push_back(u);
     }
 	int visited[n+1],parent[n+1];
 	memset(visited,0,sizeof(visited));
