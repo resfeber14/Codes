@@ -62,3 +62,26 @@ int solve(int i,int j,vector<vector<int> > &dp,vector<int> &arr){
         int x=solve(0,0,dp,arr);
         return x;
     }
+
+// Method 3: Time complexity: O(N) Space Complexity: O(1)
+
+// Here, the buy1 keeps track of the lowest price, and sell1 keeps track of the biggest profit we could get.
+// Then the tricky part comes, how to handle the buy2? Suppose in real life, you have bought and sold a stock and made $100 dollar profit.
+// When you want to purchase a stock which costs you $300 dollars, how would you think this? You must think, um, I have made $100 profit, 
+// so I think this $300 dollar stock is worth $200 FOR ME since I have hold $100 for free.
+// There we go, you got the idea how we calculate buy2!! We just minimize the cost again!! The sell2 is just making as much profit as possible.
+// Hope this explanation helps other people to understand this!
+
+int maxProfit(vector<int>& arr) {
+        int n=arr.size();
+        if(n<=1)
+        return 0;
+        int sell1=0,sell2=0,buy1=INT_MAX,buy2=INT_MAX;
+        for(int i=0;i<n;i++){
+            buy1=min(buy1,arr[i]);    
+            sell1= max(sell1,arr[i]-buy1);
+            buy2=min(buy2,arr[i]-sell1);
+            sell2=max(sell2,arr[i]-buy2);
+        }
+        return sell2;
+    }
