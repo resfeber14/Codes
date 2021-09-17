@@ -29,3 +29,24 @@ int solve(int i,int n,string s,vector<int> &dp){
         vector<int> dp(n,-1);
         return solve(0,n,s,dp);
     }
+
+// Problem Link:
+
+// Time Complexity: O(n)
+
+
+
+int Solution::numDecodings(string s) {
+    int n=s.length();
+    vector<int> dp(n+1,0);
+    dp[n]=1;
+    for(int i=n-1;i>=0;i--){
+        if(s[i]!='0'){
+            dp[i]=((dp[i])%1000000007+(dp[i+1])%1000000007)%1000000007;
+        }
+        if(i+1<n && (s[i]=='1' || (s[i]=='2' && s[i+1]<='6'))){
+            dp[i]=((dp[i+2])%1000000007 +(dp[i])%1000000007)%1000000007;
+        }
+    }
+    return dp[0];
+}
