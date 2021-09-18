@@ -1,6 +1,6 @@
 // Problem Link: https://leetcode.com/problems/maximum-earnings-from-taxi/
 
-
+// Modified version of: https://leetcode.com/problems/maximum-profit-in-job-scheduling/
 // Approach 1:  Time Complexity: O(N*N) Space Complexity: O(N*N)
 // Here we apply inclusion exclusion principle.Here the condition will be the previous end point
 
