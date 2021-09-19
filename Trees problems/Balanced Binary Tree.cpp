@@ -21,3 +21,24 @@
     bool isBalanced(TreeNode* root) {
         return solve(root).second;
     }
+
+// Approach 2:  Here we will only add 2 lines from the maximum depth of a binary tree
+
+
+int solve(TreeNode* root){
+        if(!root)
+            return 0;
+        int lh=solve(root->left);
+        int rh=solve(root->right);
+        if(lh==-1 || rh==-1)
+            return -1;
+        if(abs(rh-lh)>1)
+            return -1;
+        return max(lh,rh)+1;
+    }
+    
+    bool isBalanced(TreeNode* root) {
+        if(solve(root)==-1)
+            return false;
+        return true;
+    }
