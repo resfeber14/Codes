@@ -2,6 +2,7 @@
 
 // Just Like MCM
 
+// Time Complexity: O(N*N*D) Space Complexity: O(N*D)
 int solve(int i,int j,vector<int> &arr,vector<vector<int> > &dp){
         if(i==arr.size() && j==0)
             return 0;
