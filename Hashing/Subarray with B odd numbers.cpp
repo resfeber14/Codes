@@ -1,7 +1,8 @@
 // Problem Link:  https://www.interviewbit.com/problems/subarray-with-b-odd-numbers/
 
-// Here,we are replacing odd numbers with 1 and even with 0.
-// If count ==b ,then we increment the count and also include those subarrays which were counted earlier
+// Here,we are replacing odd numbers with 1 and even with 0.Now,the problem reduces to https://leetcode.com/problems/subarray-sum-equals-k/
+// Here,if m[sum-k] exists then it means from there there is a subarray with sum=k.Hence we are adding our answer by m[sum-k],bcoz only that no of subarrays will be formed
+
 
 int Solution::solve(vector<int> &arr, int k) {
     int n=arr.size();
