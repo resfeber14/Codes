@@ -15,7 +15,7 @@ int solve(int i,int j,int n,vector<vector<int> > &dp){
             if(i+j<=n)  
                 op1=solve(i+j,j,n,dp);
         }
-        if(i!=j)  // we are checking here if i==j then we will fall into infinte loop .So,we are checking if i!=j  
+        if(i!=j)  // we are checking here if i==j then we will fall into infinte loop .So,we are checking if i!=j  because if solve(1,1) willl happen then this will go infinte 
             op2=solve(i,i,n,dp);
         if(op1!=INT_MAX)
             op1++;
