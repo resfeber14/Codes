@@ -1,5 +1,5 @@
 // Naive Approach
-
+// Time Complexity:O(N*M) Space Complexity: O(1)
 void naive(){
   	string txt,pat;
   	cin>>txt>>pat;
@@ -29,8 +29,10 @@ void naive(){
   	Proper prefix: Prefix of a string which starts from the 0th index but is not equal to the string
   	Suffix:  Any substring which is in the end of the string
   	LPS value can atmost increase to 1 if we move by 1
+	Time Complexity:O(N+M) Space Complexity:O(M)
 	  LPS ARRAY formation:
 */
+
 	int lps[m]={};
 	int j=0;
 	for(int i=1;i<m;i++){
