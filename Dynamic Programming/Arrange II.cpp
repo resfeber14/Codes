@@ -4,8 +4,11 @@
 
 
 int solve(int i,int j,string s,vector<vector<int> > &dp){
-	if(i==s.length())
-		return 0;
+	if(i==s.length() && j>1)  // If we have placed all the horses but all the stables are not filled
+		return 100000;
+	
+	if(i==s.length() && j==1)  // If we have placed all the horses and all the stables are filled
+        return 0;
 	
 	if(dp[i][j]!=-1)
 		return dp[i][j];
