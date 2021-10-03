@@ -2,6 +2,7 @@
 
 /*
  Problem Link: https://practice.geeksforgeeks.org/problems/count-of-distinct-substrings/1#
+Time Complexity: O(N*N)     Space Complexity: O(N*26) 
 
 Given a string of length n of lowercase alphabet characters, we need to count total number of distinct substrings of this string.
 Examples:
