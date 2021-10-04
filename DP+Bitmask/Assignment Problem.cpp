@@ -61,7 +61,7 @@ int main() {
   	cout<<solve(0,(1<<n)-1,n,arr); 
 	/* We are representing the availability men as mask
   	 if the jth bit of mask is ON ,it means ith man has not been assigned any job
-         Here 1<<(n-1) means all the n bits are set 1,i.e. all men are available
+         Here 1<<(n)-1 means all the n bits are set 1,i.e. all men are available
 	 */
     return 0;
 }
