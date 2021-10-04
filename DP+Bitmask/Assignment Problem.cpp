@@ -26,6 +26,8 @@ N <= 20
 
 */
 
+// Time Complexity: O(N²* 2^n) Space complexity: O(N*2^n)
+
 int dp[21][1<<21];
 
 int solve(int i,int mask,int n,vector<vector<int> > &arr){
@@ -56,7 +58,10 @@ int main() {
   			arr[i][j]=x;
   		}
   	}
-  	cout<<solve(0,(1<<n)-1,n,arr); // We are representing the availability men as mask
-  	// if the jth bit of mask is ON ,it means ith man has not been assigned any job
+  	cout<<solve(0,(1<<n)-1,n,arr); 
+	/* We are representing the availability men as mask
+  	 if the jth bit of mask is ON ,it means ith man has not been assigned any job
+         Here 1<<(n-1) means all the n bits are set 1,i.e. all men are available
+	 */
     return 0;
 }
