@@ -28,6 +28,15 @@ N <= 20
 
 // Time Complexity: O(N²* 2^n) Space complexity: O(N*2^n)
 
+
+/*
+Tip: Always try to make the mask of the state which is in more amount if we can make.Bcoz let's say N men are to be assigned M jobs,And One job can be asisgned to 
+only one man,Then if(job<=20),then we can make a mask of the job itself,And keep the count of the person which we need to assign the current job by the no of set bits
+in the mask(which represents the no of jobs which have been assigned).As,we need to assign all the men some jobs,hence we will pick a person sequentially(which
+can be done by keeping count of set bits in the mask,use __builtin_popcount(mask) method) and check whether
+we can assign the current job to the kth person or not.Hence,we can decrease one state.
+
+*/
 int dp[21][1<<21];
 
 int solve(int i,int mask,int n,vector<vector<int> > &arr){
