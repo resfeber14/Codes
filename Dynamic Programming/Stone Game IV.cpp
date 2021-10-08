@@ -41,8 +41,27 @@ public:
     }
 };
 
-// Approach 2: Time Complexity: O(N*root(N)) Space Complexity: O(N)
+/* Approach 2: Time Complexity: O(N*root(N)) Space Complexity: O(N)
+Let's think in the backtrack way. If we have a state i that we know the current player must lose, what can we infer?
 
+-- Any other states that can go to i must be True.
+
+Let's say in another state j the current player in j can go to i by removing stones. In this case, the state j is True since the current player must win.
+
+How to find all the state j? Well, we can iterate over the square numbers and add them to i.
+
+Algorithm
+
+Still, let dp[i] represent the result of the game of i stones. dp[i]==True means the first player (Alice) must win, and dp[i]==False means the second player (Bob) must
+win when both players play optimally.
+
+When we get to a False state, we mark all accessible states as True. When we get to a True state, just continue (Why? Well... because it's useless).
+
+Finally, we only need to return dp[n].
+
+Note: After reading the Algorithm part, it is recommended to try to write the code on your own before reading the solution code.
+
+*/
 int solve(int n,vector<int> &dp){
         if(n==0)
             return 0;
