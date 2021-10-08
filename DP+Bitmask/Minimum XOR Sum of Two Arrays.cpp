@@ -1,5 +1,8 @@
-// Problem Link:  https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/
+/* Problem Link:  https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/
 
+Same as https://leetcode.com/problems/maximum-compatibility-score-sum/
+
+*/
 int dp[1<<15];  // indicates which elements of arr1 has been paired up
     int solve(int mask,vector<int> &arr1,vector<int> &arr2,int n){
         int k=__builtin_popcount(mask); 
