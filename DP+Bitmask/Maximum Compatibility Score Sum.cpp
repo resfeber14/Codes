@@ -1,6 +1,10 @@
 /* Problem Link: https://leetcode.com/problems/maximum-compatibility-score-sum/
 Time Complexity: O(N*M*2^N) Space Complexity: O(2^N)
 
+Here we are keeping track of how many mentors have been assigned a student by checking the no of set bits,and we are monitoring which students have been assigned a mentor using
+mask.As we are assigning mentors sequentially(since we need to assign all mentors ) ,we are assigning students by taking all the permutations in which they can be assigned
+any work.
+
 */
 
 
