@@ -36,9 +36,9 @@ Problem Link: https://leetcode.com/problems/longest-subarray-of-1s-after-deletin
                 op1=1+solve(i+1,2,arr,dp);
             }
         }
-        else{
+   /*     else{
             op1=solve(i+1,3,arr,dp);
-        }
+        }*/
         return dp[i][j]= max(op1,op2);
     }
     
