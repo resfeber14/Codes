@@ -1,2 +1,2 @@
 # Codes
-Containing codes of standard and interesting data structures and algorithms
+Contains Solutions of various problems of coding platforms like Leetcode,Geeksforgeeks,Interviewbit
