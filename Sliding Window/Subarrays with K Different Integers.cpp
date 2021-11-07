@@ -24,6 +24,6 @@ Same as:  https://leetcode.com/problems/count-vowel-substrings-of-a-string/
         return ans;
     }
     int subarraysWithKDistinct(vector<int>& arr, int k) {
-        int ans=solve(arr,k)-solve(arr,k-1);
+        int ans=solve(arr,k)-solve(arr,k-1); // No of substring with atmost K distinct integers- No of substrings with atmost K distinct integers=No of substrings with Exactly K distinct integers.
         return ans;
     }
