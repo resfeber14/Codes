@@ -60,3 +60,42 @@ public:
         return ans;
     }
 };
+
+// Approach 3: O(2*N)+O(2*N)
+
+class Solution {
+public:
+    bool isVowel(char c){
+        return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+    }
+    int solve(string &s,int k){
+        int i=0,j=0;
+        map<char,int> m;
+        int n=s.length();
+        int ans=0;
+        while(j<n){
+            if(!isVowel(s[j])){
+                m.clear();
+                i=j+1;
+                j++;
+                continue;
+            }
+            m[s[j]]++;
+            while(m.size()>k){
+                m[s[i]]--;
+                if(m[s[i]]==0)
+                    m.erase(s[i]);
+                i++;
+            }
+            ans+=(j-i+1);
+            j++;
+        }
+        return ans;
+    }
+    int countVowelSubstrings(string s) {
+        int ans=0;
+        ans= solve(s,5)-solve(s,4); // no of substrings with <=5 vowels - no of substrings with <=4 vowels= no of substrings with exactly 5 vowels
+        return ans;
+    }
+};
+
