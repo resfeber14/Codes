@@ -94,7 +94,7 @@ public:
     }
     int countVowelSubstrings(string s) {
         int ans=0;
-        ans= solve(s,5)-solve(s,4); // no of substrings with <=5 vowels - no of substrings with <=4 vowels= no of substrings with exactly 5 vowels
+        ans= solve(s,5)-solve(s,4); // no of substrings with <=5(Atmost 5) vowels - no of substrings with <=4 (Atmost) vowels= no of substrings with exactly 5 vowels
         return ans;
     }
 };
