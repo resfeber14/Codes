@@ -2,7 +2,7 @@
 Problem Link:  https://leetcode.com/problems/count-vowel-substrings-of-a-string/
 */
 
-
+// Time Complxity: O(N*N*N) Space Complexity: O(1)
 int countVowelSubstrings(string s) {
         int n=s.length();
         map<char,int> m;
