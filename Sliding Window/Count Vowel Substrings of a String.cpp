@@ -1,5 +1,5 @@
 /*
-Problem Link: 
+Problem Link:  https://leetcode.com/problems/count-vowel-substrings-of-a-string/
 */
 
 
@@ -12,7 +12,7 @@ int countVowelSubstrings(string s) {
                 int j=i+len-1;
                 int a=0,b=0,c=0,d=0,e=0;
                 bool flag=1;
-                for(int k=i;k<=j;k++){ // traversing the substring
+                for(int k=i;k<=j;k++){ // traversing the substring starting from i and is of length len
                     if(s[k]=='a' ){
                         a++;
                     }
