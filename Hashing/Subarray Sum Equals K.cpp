@@ -4,23 +4,15 @@
 // sum is sum-k,and now the prefix sum is sum,then we have got some subarray with sum equals to k.Yayy:)
 
 int subarraySum(vector<int>& arr, int k) {
-        int n=arr.size();
-        unordered_map<int,int> m;
+        map<int,int> m;
+        m[0]++;
         int sum=0,ans=0;
-        for(int i=0;i<n;i++){
+        for(int i=0;i<arr.size();i++){
             sum+=arr[i];
-            if(sum==k){
-                ans++;
+            if(m.count(sum-k)){
+                ans+=m[sum-k];
             }
             m[sum]++;
-            if(m.find(sum-k)!=m.end()){
-                int x=m[sum],y=m[sum-k];
-                if(k==0){
-                    ans+=y-1;
-                }
-                else
-                ans+= y;
-            }
         }
         return ans;
     }
