@@ -41,12 +41,12 @@ Approach 2: Time complexity: O(N) Space Complexity: O(1)
 
 */
 
-int ans=0;
-    int dfs(TreeNode* root,int val){
+    int ans=0;
+    int dfs(TreeNode* root){
         if(!root)
             return 0;
-        int l=dfs(root->left,root->val);
-        int r=dfs(root->right,root->val);
+        int l=dfs(root->left);
+        int r=dfs(root->right);
         if(!root->left || root->left->val!=root->val)
             l=0;
         if(!root->right || root->right->val !=root->val)
@@ -58,6 +58,6 @@ int ans=0;
         ans=0;
         if(!root)
             return 0;
-        dfs(root,root->val);
+        dfs(root);
         return ans;
     }
