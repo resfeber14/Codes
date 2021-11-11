@@ -35,3 +35,29 @@ int solve(TreeNode* root,int &ans){
             ans--;
         return ans;
     }
+
+/*
+Approach 2: Time complexity: O(N) Space Complexity: O(1)
+
+*/
+
+int ans=0;
+    int dfs(TreeNode* root,int val){
+        if(!root)
+            return 0;
+        int l=dfs(root->left,root->val);
+        int r=dfs(root->right,root->val);
+        if(!root->left || root->left->val!=root->val)
+            l=0;
+        if(!root->right || root->right->val !=root->val)
+            r=0;
+        ans=max(ans,l+r);
+        return max(l+1,r+1);
+    }
+    int longestUnivaluePath(TreeNode* root) {
+        ans=0;
+        if(!root)
+            return 0;
+        dfs(root,root->val);
+        return ans;
+    }
