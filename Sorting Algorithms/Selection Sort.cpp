@@ -1,5 +1,8 @@
 // Approach: In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. 
 
+// Time Complexity: O(N*N) Space Complexity: O(1)
+// not stable
+
 void selection_sort(vector<int> &v){
 	int n=v.size();
 	for(int i=0;i<n-1;i++){
