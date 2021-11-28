@@ -1,39 +1,17 @@
-#include <bits/stdc++.h> 
-#include<map>
-using namespace std;
-
-void bubble_sort(int n,vector<int> &v){
-	// if list is already sorted then there would not be any swaps.So,for that use flag
-    // if list is already sorted,Time complexity: O(k*(n-1))  Best case
-    // Average: O(N*N)
-    // Worst: O(N*N)
-    // Inplace,Stable
-	for(int i=1;i<n-1;i++){
+// At any stage,left part will be unsorted and the right part will be sorted
+// Time Complexity: O(N) for the best case(when the array is already sorted)
+// Time Complexity: O(N*N) {For average and worst case complexity}
+// Space Complexity:O(1)
+void bubble_sort(vector<int> &v,int n){ // Stable Sort,Inplace,Bubble sort
+	for(int i=1;i<n;i++){
 		bool flag=false;
 		for(int j=0;j<n-i;j++){
 			if(v[j]>v[j+1]){
 				flag=true;
-				swap(v[j+1],v[j]);
+				swap(v[j],v[j+1]);
 			}
 		}
-		if(!flag){
+		if(!flag)
 			break;
-		}
 	}
-}
-
-int main() {
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int n;
-    cin>>n;
-    vector<int> v(n);
-    for(int i=0;i<n;i++){
-    	cin>>v[i];
-    }
-    bubble_sort(n,v);
-    for(int i=0;i<n;i++){
-    	cout<<v[i]<<" ";
-    }
-    return 0;
 }
